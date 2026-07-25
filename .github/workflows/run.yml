@@ -8,7 +8,7 @@ on:
 
 concurrency:
   group: leetcode-tracker
-  cancel-in-progress: False
+  cancel-in-progress: true
 
 env:
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
