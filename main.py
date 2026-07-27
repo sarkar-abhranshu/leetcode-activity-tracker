@@ -22,7 +22,6 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-
 def main() -> None:
     # Validate secrets before doing anything network-related
     try:

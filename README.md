@@ -127,7 +127,7 @@ https://leetcode.com/problems/two-sum/
 
 # ✅ Quality Assurance
 
-- 65 automated tests with 88% coverage using Pytest
+- Comprehensive automated test suite with approximately 88% code coverage using Pytest
 - Persistent state across GitHub Actions runs using GitHub Gists
 - Ruff linting and code formatting
 - Continuous Integration using GitHub Actions
@@ -178,22 +178,23 @@ pip install -r requirements.txt
 
 ## Configuration
 
-Create a `.env` file in the project root.
+Set the following environment variables before running the application:
 
-```env
-BOT_TOKEN=your_telegram_bot_token
-CHAT_ID=your_telegram_chat_id
-
-GIST_ID=your_private_gist_id
-GIST_TOKEN=your_github_personal_access_token
-
-MY_USERNAME=AkshatPrep
-OPPONENT_USERNAMES=user1,user2,user3
+```text
+BOT_TOKEN   - Telegram Bot Token
+CHAT_ID     - Telegram Chat ID
+GIST_ID     - Private GitHub Gist ID
+GIST_TOKEN  - GitHub Personal Access Token
 ```
 
-The application validates `BOT_TOKEN`, `CHAT_ID`, `GIST_ID`, and `GIST_TOKEN` during startup.
+Optional environment variables:
 
-`MY_USERNAME` and `OPPONENT_USERNAMES` are optional and fall back to the defaults defined in `backend/config.py`.
+```text
+MY_USERNAME
+OPPONENT_USERNAMES
+```
+
+The application validates the required environment variables during startup before tracking begins.
 
 ---
 
@@ -219,7 +220,10 @@ docker build -t leetcode-activity-tracker .
 
 ```bash
 docker run --rm \
---env-file .env \
+-e BOT_TOKEN=your_telegram_bot_token \
+-e CHAT_ID=your_telegram_chat_id \
+-e GIST_ID=your_private_gist_id \
+-e GIST_TOKEN=your_github_personal_access_token \
 leetcode-activity-tracker
 ```
 
@@ -227,7 +231,10 @@ leetcode-activity-tracker
 
 ```powershell
 docker run --rm `
---env-file .env `
+-e BOT_TOKEN="your_telegram_bot_token" `
+-e CHAT_ID="your_telegram_chat_id" `
+-e GIST_ID="your_private_gist_id" `
+-e GIST_TOKEN="your_github_personal_access_token" `
 leetcode-activity-tracker
 ```
 

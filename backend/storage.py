@@ -102,7 +102,11 @@ def load() -> dict:
 
         raw_content = _fetch_gist_file_content(gist_file)
 
-    except (requests.exceptions.Timeout, requests.exceptions.RequestException, ValueError) as exc:
+    except (
+        requests.exceptions.Timeout,
+        requests.exceptions.RequestException,
+        ValueError,
+    ) as exc:
         logger.error("Failed to fetch gist: %s", exc)
         return _default_data()
 
@@ -127,9 +131,7 @@ def load() -> dict:
         history = []
 
     data["users"] = {
-        u: _clean_user_record(r)
-        for u, r in users.items()
-        if isinstance(r, dict)
+        u: _clean_user_record(r) for u, r in users.items() if isinstance(r, dict)
     }
     data["history"] = history
 
@@ -143,9 +145,7 @@ def save(data: dict) -> None:
 
     payload = {
         "files": {
-            GIST_FILENAME: {
-                "content": json.dumps(data, indent=2, ensure_ascii=False)
-            }
+            GIST_FILENAME: {"content": json.dumps(data, indent=2, ensure_ascii=False)}
         }
     }
 

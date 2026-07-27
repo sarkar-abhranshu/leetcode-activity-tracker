@@ -6,7 +6,6 @@ import requests
 
 from backend import storage
 
-
 DEFAULT_DATA = {
     "users": {},
     "history": [],
@@ -73,11 +72,7 @@ def test_load_returns_default_when_gist_file_is_missing(monkeypatch):
 def test_load_returns_default_when_gist_file_content_is_empty(monkeypatch):
     _configure_gist_credentials(monkeypatch)
     response = _gist_response(
-        gist_json={
-            "files": {
-                storage.GIST_FILENAME: {"content": ""}
-            }
-        }
+        gist_json={"files": {storage.GIST_FILENAME: {"content": ""}}}
     )
     get_mock = Mock(return_value=response)
     monkeypatch.setattr(storage.requests, "get", get_mock)
@@ -99,11 +94,7 @@ def test_load_returns_default_when_gist_json_is_invalid(monkeypatch):
 def test_load_returns_default_when_gist_content_is_not_a_json_object(monkeypatch):
     _configure_gist_credentials(monkeypatch)
     response = _gist_response(
-        gist_json={
-            "files": {
-                storage.GIST_FILENAME: {"content": json.dumps([1, 2, 3])}
-            }
-        }
+        gist_json={"files": {storage.GIST_FILENAME: {"content": json.dumps([1, 2, 3])}}}
     )
     get_mock = Mock(return_value=response)
     monkeypatch.setattr(storage.requests, "get", get_mock)
@@ -129,11 +120,7 @@ def test_load_parses_a_valid_gist(monkeypatch):
         "history": [{"date": today, "solves": {"akshat": 2, "alice": 5}}],
     }
     response = _gist_response(
-        gist_json={
-            "files": {
-                storage.GIST_FILENAME: {"content": json.dumps(payload)}
-            }
-        }
+        gist_json={"files": {storage.GIST_FILENAME: {"content": json.dumps(payload)}}}
     )
     get_mock = Mock(return_value=response)
     monkeypatch.setattr(storage.requests, "get", get_mock)

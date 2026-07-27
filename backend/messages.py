@@ -10,7 +10,6 @@ import time
 
 from backend import config
 
-
 # ─── Message templates ────────────────────────────────────────────────────────
 # Use {problem}, {minutes}, {opponent}, {user_inactive} as placeholders.
 

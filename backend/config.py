@@ -21,7 +21,6 @@ _DEFAULT_OPPONENT_USERNAMES = [
     "Adarsh200IQ",
     "AbhishekSNair",
     "Akhilesh_M_2204",
-    "trigun_2005",
     "shreekar6362",
     "onShoreApple",
     "devansh_shukla15",
@@ -38,20 +37,16 @@ _DEFAULT_OPPONENT_USERNAMES = [
     "srujan_kashyaps",
     "BNpq6Bs3HH",
     "krthk200518",
+    "TrigunAlgo",
 ]
 
-MY_USERNAME: str = (
-    os.environ.get("MY_USERNAME", "").strip()
-    or _DEFAULT_MY_USERNAME
-)
+MY_USERNAME: str = os.environ.get("MY_USERNAME", "").strip() or _DEFAULT_MY_USERNAME
 
 _opponents = os.environ.get("OPPONENT_USERNAMES", "").strip()
 
 if _opponents:
     extra = [u.strip() for u in _opponents.split(",") if u.strip()]
-    OPPONENT_USERNAMES = list(
-        dict.fromkeys(_DEFAULT_OPPONENT_USERNAMES + extra)
-    )
+    OPPONENT_USERNAMES = list(dict.fromkeys(_DEFAULT_OPPONENT_USERNAMES + extra))
 else:
     OPPONENT_USERNAMES = _DEFAULT_OPPONENT_USERNAMES
 
@@ -68,9 +63,8 @@ INACTIVITY_ESCALATION_MINUTES: int = int(
     os.environ.get("INACTIVITY_ESCALATION_MINUTES", "60")
 )
 
-MAX_ALERT_AGE_HOURS: int = int(
-    os.environ.get("MAX_ALERT_AGE_HOURS", "24")
-)
+MAX_ALERT_AGE_HOURS: int = int(os.environ.get("MAX_ALERT_AGE_HOURS", "24"))
+
 
 # ─────────────────────────────────────────────────────────────
 # Validation
@@ -95,6 +89,5 @@ def validate() -> None:
 
     if missing:
         raise EnvironmentError(
-            "Missing required environment variables: "
-            + ", ".join(missing)
+            "Missing required environment variables: " + ", ".join(missing)
         )

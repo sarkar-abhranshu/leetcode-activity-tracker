@@ -39,8 +39,6 @@ def test_generate_alert_message():
     assert "Easy" in msg
     assert "leetcode.com/problems/two-sum/" in msg
 
-   
-
 
 def test_generate_inactivity_nudge():
     msg = messages.generate_inactivity_nudge(45)

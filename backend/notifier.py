@@ -57,4 +57,3 @@ def send_alert(body: str) -> bool:
 def send_silent(body: str) -> bool:
     """Send a single silent message (no push notification)."""
     return _send_raw(body, disable_notification=True)
-
