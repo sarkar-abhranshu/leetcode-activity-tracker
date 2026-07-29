@@ -70,7 +70,7 @@ def check_opponent(data: dict, opponent: str) -> int:
     submissions = leetcode.get_accepted_submissions_since(opponent, since_ts=last_ts)
 
     if not submissions:
-        logger.info("No accepted submissions found for '%s'.", opponent)
+        logger.info("No new accepted submissions for '%s' since last check.", opponent)
         return 0
 
     # Guard: don't alert on very old solves (e.g., first run after reset)

@@ -9,6 +9,10 @@ Usage:
 import logging
 import sys
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from backend import config
 from backend import tracker
 
