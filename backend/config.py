@@ -14,10 +14,9 @@ CHAT_ID: str = os.environ.get("CHAT_ID", "").strip()
 # ─────────────────────────────────────────────────────────────
 # LeetCode Usernames
 # ─────────────────────────────────────────────────────────────
-_DEFAULT_MY_USERNAME = "AkshatPrep"
+_DEFAULT_MY_USERNAME = "riceeater21"
 
 _DEFAULT_OPPONENT_USERNAMES = [
-    "riceeater21",
     "Adarsh200IQ",
     "AbhishekSNair",
     "Akhilesh_M_2204",
@@ -25,7 +24,7 @@ _DEFAULT_OPPONENT_USERNAMES = [
     "anga205",
     "shakirth-anisha",
     "aman-khandelwal",
-    "Akshat18Shukla2004",
+    "AkshatPrep",
     "abhay14505",
     "AmiteshSinha",
     "krthk200518",
