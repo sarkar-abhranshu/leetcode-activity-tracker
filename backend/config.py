@@ -25,7 +25,6 @@ _DEFAULT_OPPONENT_USERNAMES = [
     "shakirth-anisha",
     "aman-khandelwal",
     "AkshatPrep",
-    "abhay14505",
     "AmiteshSinha",
     "krthk200518",
     "KathitJoshi",
