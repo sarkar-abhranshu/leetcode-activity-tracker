@@ -48,6 +48,12 @@ GIST_ID: str = os.environ.get("GIST_ID", "").strip()
 GIST_TOKEN: str = os.environ.get("GIST_TOKEN", "").strip()
 
 # ─────────────────────────────────────────────────────────────
+# GitHub Actions (for bot trigger)
+# ─────────────────────────────────────────────────────────────
+GH_PAT: str = os.environ.get("GH_PAT", "").strip()
+GH_REPO: str = os.environ.get("GH_REPO", "").strip()
+
+# ─────────────────────────────────────────────────────────────
 # Tracker Configuration
 # ─────────────────────────────────────────────────────────────
 INACTIVITY_ESCALATION_MINUTES: int = int(

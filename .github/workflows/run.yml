@@ -4,6 +4,12 @@ on:
   schedule:
     # Runs every 20 minutes
     - cron: "*/20 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: False
+        default: 'normal'
 
 
 concurrency:
